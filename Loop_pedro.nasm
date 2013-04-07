@@ -13,7 +13,7 @@ section .text
 _start:
 
 	; Initializing the top of stack with argv
-	mov		eax, dword [esp+8]
+	mov		eax, 0x5
 	push	eax
 	loop	PrintLoop
 
