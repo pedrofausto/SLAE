@@ -4,7 +4,7 @@
 ; e.mail: pedro\.fausto[@]gmail\.com
 
 ; Purpose:	training LOOP instructions from Vivek SLAE course.
-;			print "Hello World 3x using LOOP"
+;			print "Hello World 3x using LOOP instruction"
 
 global _start
 
