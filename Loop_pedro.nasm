@@ -3,7 +3,7 @@
 ; Author: Pedro Fausto Rodrigues
 ; e.mail: pedro\.fausto[@]gmail\.com
 
-; Purpose:	training LOOP instructions from Vivek SALE course.
+; Purpose:	training LOOP instructions from Vivek SLAE course.
 ;			print "Hello World 5x using LOOP"
 
 global _start
@@ -12,15 +12,12 @@ section .text
 
 _start:
 
-	; Initializing the top of stack with argv
-	mov		eax, 0x5
-	push	eax
-	loop	PrintLoop
-
+	mov ecx, 0x3
+	
 PrintLoop:	
 
 	;Load ECX with argv
-	call LoadECX
+	push ecx
 
 	;Printing the message
 	mov eax, 0x4
@@ -30,15 +27,13 @@ PrintLoop:
 	int 0x80
 
 	; restoring ecx
-	call SaveECX
-
-SaveECX:
-	push ecx
-	ret
-
-LoadECX:
 	pop ecx
-	ret
+
+	loop	PrintLoop
+
+	mov ebx, 0x0
+	mov eax, 0x1
+	int 0x80
 
 section .data
 	
