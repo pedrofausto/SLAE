@@ -4,20 +4,20 @@ section .text
 _start:
  
     
-    jump short call_shellcode
+    jmp short call_shellcode
     ; sys_write(stdout, message, length)
 
 shellcode:
     xor eax, eax
-    mov al, 4        ; sys_write syscall
+    mov al, 0x4        ; sys_write syscall
 
     xor ebx, ebx
-    mov bl, 1        ; stdout
+    mov bl, 0x1        ; stdout
 
-    pop ecx, message  ; message address
+    pop ecx  ; message address
 
     xor edx, edx
-    mov dl, 13   ; message string length
+    mov dl, 14   ; message string length
     int 80h
  
     ; sys_exit(return_code)
