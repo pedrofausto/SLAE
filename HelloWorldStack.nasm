@@ -17,6 +17,7 @@ _start:
     xor edx, edx
     push edx
 
+    ; "Hello World!\n" coded in hex
     push 0x0a21646c
     push 0x726f5720
     push 0x6f6c6c65
