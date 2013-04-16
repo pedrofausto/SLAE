@@ -17,7 +17,7 @@ _start:
     xor edx, edx
     push edx
 
-    ; "Hello World!\n" coded in hex
+    ; "Hello World!\n" coded in hex and wrote in reverse order
     push 0x0a21646c
     push 0x726f5720
     push 0x6f6c6c65
