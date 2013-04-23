@@ -19,11 +19,10 @@ _start:
 
  execve_rt:
  	pop ebx
- 	lea ecx, [ebx]
- 	mov al, 0x11
+ 	mov al, 0xB
  	int 0x80
 
 
  bin_bash:
  	call execve_rt
- 	message db "/bin/bash", 0x30
+ 	message db "/bin/bash", 0x0
