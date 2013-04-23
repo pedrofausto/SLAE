@@ -8,13 +8,13 @@ section .text
 
 _start:
 
- ; eax containg the syscall 0x11 execve
-
-
+	; zero-ing 3 registers in a row
  	xor ebx, ebx
  	mul ebx
 
+ 	; ecx doesn't have to contain any information right now
  	xor ecx, ecx
+
  	jmp short bin_bash
 
  execve_rt:
