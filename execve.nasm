@@ -10,15 +10,16 @@ _start:
 
  ; eax containg the syscall 0x11 execve
 
- 	xor eax, eax
- 	mul eax  ; zero-ing eax and edx at the same time
 
  	xor ebx, ebx
+ 	mul ebx
+
  	xor ecx, ecx
  	jmp short bin_bash
 
  execve_rt:
  	pop ebx
+ 	lea ecx, [ebx]
  	mov al, 0x11
  	int 0x80
 
