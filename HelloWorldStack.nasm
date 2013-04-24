@@ -8,14 +8,13 @@ section .text
 
 _start:
  
-    xor eax, eax
-    mov al, 0x4        ; sys_write syscall
-
     xor ebx, ebx
+    mul ebx
+
+    mov al, 0x4        ; sys_write syscall  
     mov bl, 0x1        ; stdout
 
-    xor edx, edx
-    push edx
+    push edx ; not really needed in this case
 
     ; "Hello World!\n" coded in hex and wrote in reverse order
     push 0x0a21646c
@@ -24,9 +23,8 @@ _start:
     push 0x48
 
     mov ecx, esp
-
  
-    mov dl, 13   ; message string length
+    mov dl, 30   ; message string length
     int 0x80
  
     ; sys_exit(return_code)

