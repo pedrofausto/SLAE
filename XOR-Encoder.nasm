@@ -29,7 +29,7 @@ Decoder:
 	; We'll loop in the Decoder phase until the register CL reach zero thus stoping the loop
 	loop Decoder
 
-	jmp short Shellcode
+	jmp short execve_shellcode
 
 
 Shellcode:
