@@ -1,4 +1,6 @@
 ; Hello World printed by stack
+; Author: Pedro Fausto
+
 
 
 
